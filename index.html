@@ -1,0 +1,1430 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unilogic - Smart Automation AI‑Driven BMS</title>
+    <meta name="description" content="AIMass Tailwind based SASS Template" />
+
+    <!-- Favicon  -->
+    <link rel="icon" href="assets/img/3b07afe1-32a1-4c5f-a8e7-ee8b19d5b9c4.png" />
+
+    <!-- Site font -->
+    <link href="assets/fonts/fonts.css" rel="stylesheet" />
+
+    <!-- Vendor CSS -->
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/vendors/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/vendors/jos.css" />
+    <link rel="stylesheet" href="assets/css/vendors/menu.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <!-- Development css -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <!-- Production css -->
+    <!-- <link rel="stylesheet" href="assets/css/style.min.css"> -->
+</head>
+
+<body>
+        <style>
+
+       .wh {
+        color:#ffff;
+       }
+
+       .global-container > * {
+        color: white 
+        /* rgb(127, 0, 0); */
+       }
+
+
+        .dropdown-icon {
+            display: none;
+        }
+        /* Custom CSS for the hero section with video background */
+        #section-hero {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            height: 100vh;
+        }
+        
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        #hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 1; /* Reduced opacity so text remains readable */
+        }
+        
+        /* Dark overlay for better text readability */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background: rgba(241, 241, 241, 0.7); */
+            z-index: 0;
+        }
+        
+        /* Hero content styling */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Button styling */
+        .button {
+            display: inline-block;
+            padding: 12px 32px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .button::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            transition: transform 0.3s ease;
+            transform: scaleY(0);
+            transform-origin: bottom;
+        }
+        
+        .button:hover::after {
+            transform: scaleY(1);
+        }
+        
+        /* Fallback for video autoplay issues */
+        .video-fallback {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            z-index: -1;
+        }
+        
+        /* Mobile optimization */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .button {
+                padding: 10px 24px;
+                font-size: 0.9rem;
+            }
+            
+            #hero-video {
+                opacity: 1; /* Even lower opacity on mobile for better readability */
+            }
+        }
+    </style>
+    <div class="page-wrapper relative z-[1] bg-white">
+        <!--...::: Header Start :::... -->
+        <header class="site-header site-header--absolute is--white py-3" id="sticky-menu">
+            <div class="global-container">
+                <div class="flex items-center justify-between gap-x-8">
+                    <!-- Header Logo -->
+                    <a class href='/'>
+                        <img src="assets/img/3b07afe1-32a1-4c5f-a8e7-ee8b19d5b9c4-removebg-preview.png" alt="AIMass" width="96" height="24" />
+                    </a>
+                    <!-- Header Logo -->
+
+                    <!-- Header Navigation -->
+                    <div class="menu-block-wrapper">
+                        <div class="menu-overlay"></div>
+                        <nav class="menu-block" id="append-menu-header">
+                            <div class="mobile-menu-head">
+                                <div class="go-back">
+                                    <img class="dropdown-icon" src="assets/img/icon-black-long-arrow-right.svg"
+                                        alt="cheveron-right" width="16" height="16" />
+                                </div>
+                                <div class="current-menu-title"></div>
+                                <div class="mobile-menu-close">&times;</div>
+                            </div>
+                            <ul class="site-menu-main">
+                                <li class="nav-item nav-item-has-children">
+                                    <a href="#" class="nav-link-item drop-trigger">Home
+                                        <img class="dropdown-icon" src="assets/img/icon-black-cheveron-right.svg"
+                                            alt="cheveron-right" width="16" height="16" /></a>
+                                    <!-- <ul class="sub-menu" id="submenu-1">
+                                        <li class="sub-menu--item">
+                                            <a href='/'>home 01</a>
+                                        </li>
+                                        <li class="sub-menu--item">
+                                            <a href='/index-2'>home 02</a>
+                                        </li>
+                                        <li class="sub-menu--item">
+                                            <a href='/index-3'>home 03</a>
+                                        </li>
+                                        <li class="sub-menu--item">
+                                            <a href='/index-4'> home 04</a>
+                                        </li>
+                                    </ul> -->
+                                </li>
+                                <li class="nav-item">
+                                    <a class='nav-link-item' href='/about'>About</a>
+                                </li>
+                                <li class="nav-item nav-item-has-children">
+                                    <a href="#" class="nav-link-item drop-trigger">Services
+                                        <img class="dropdown-icon" src="assets/img/icon-black-cheveron-right.svg"
+                                            alt="cheveron-right" width="16" height="16" /></a>
+                                    <ul class="sub-menu" id="submenu-2">
+                                        <li class="sub-menu--item">
+                                            <a href='/services'>Services</a>
+                                        </li>
+                                        <li class="sub-menu--item">
+                                            <a href='/service-details'>Service Details</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item nav-item-has-children">
+                                    <a href="#" class="nav-link-item drop-trigger">Works
+                                        <img class="dropdown-icon" src="assets/img/icon-black-cheveron-right.svg"
+                                            alt="cheveron-right" width="16" height="16" /></a>
+                                    <ul class="sub-menu" id="submenu-3">
+                                        <li class="sub-menu--item nav-item-has-children">
+                                            <a href="#" data-menu-get="h3" class="drop-trigger">blogs
+                                                <img class="dropdown-icon"
+                                                    src="assets/img/icon-black-cheveron-right.svg" alt="cheveron-right"
+                                                    width="16" height="16" /></a>
+                                            <ul class="sub-menu shape-none" id="submenu-4">
+                                                <li class="sub-menu--item">
+                                                    <a href='/blog'>blogs</a>
+                                                </li>
+                                                <li class="sub-menu--item">
+                                                    <a href='/blog-details'>blog details</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="sub-menu--item nav-item-has-children">
+                                            <a href="#" data-menu-get="h3" class="drop-trigger">Team
+                                                <img class="dropdown-icon"
+                                                    src="assets/img/icon-black-cheveron-right.svg" alt="cheveron-right"
+                                                    width="16" height="16" />
+                                            </a>
+                                            <ul class="sub-menu shape-none" id="submenu-5">
+                                                <li class="sub-menu--item">
+                                                    <a href='/teams'>Teams</a>
+                                                </li>
+                                                <li class="sub-menu--item">
+                                                    <a href='/team-details'>Teams Details</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="sub-menu--item nav-item-has-children">
+                                            <a href="#" data-menu-get="h3" class="drop-trigger">FAQ
+                                                <img class="dropdown-icon"
+                                                    src="assets/img/icon-black-cheveron-right.svg" alt="cheveron-right"
+                                                    width="16" height="16" />
+                                            </a>
+                                            <ul class="sub-menu shape-none" id="submenu-6">
+                                                <li class="sub-menu--item">
+                                                    <a href='/faq'>FAQ-1</a>
+                                                </li>
+                                                <li class="sub-menu--item">
+                                                    <a href='/faq-2'>FAQ-2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="sub-menu--item nav-item-has-children">
+                                            <a href="#" data-menu-get="h3" class="drop-trigger">Portfolio
+                                                <img class="dropdown-icon"
+                                                    src="assets/img/icon-black-cheveron-right.svg" alt="cheveron-right"
+                                                    width="16" height="16" />
+                                            </a>
+                                            <ul class="sub-menu shape-none" id="submenu-7">
+                                                <li class="sub-menu--item">
+                                                    <a href='/portfolio'>Portfolio</a>
+                                                </li>
+                                                <li class="sub-menu--item">
+                                                    <a href='/portfolio-details'>Portfolio Details</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="sub-menu--item">
+                                            <a class='drop-trigger' data-menu-get='h3' href='/pricing'>Pricing
+                                            </a>
+                                        </li>
+
+                                        <li class="sub-menu--item nav-item-has-children">
+                                            <a href="#" data-menu-get="h3" class="drop-trigger">Utilities
+                                                <img class="dropdown-icon"
+                                                    src="assets/img/icon-black-cheveron-right.svg" alt="cheveron-right"
+                                                    width="16" height="16" />
+                                            </a>
+                                            <ul class="sub-menu shape-none" id="submenu-8">
+                                                <li class="sub-menu--item">
+                                                    <a href='/error-404'>Error 404</a>
+                                                </li>
+                                                <li class="sub-menu--item">
+                                                    <a href='/login'>Login</a>
+                                                </li>
+                                                <li class="sub-menu--item">
+                                                    <a href='/signup'>Signup</a>
+                                                </li>
+                                                <li class="sub-menu--item">
+                                                    <a href='/reset-password'>Reset Password</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class='nav-link-item' href='/contact'>Contact</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- Header Navigation -->
+
+                    <!-- Header User Event -->
+                    <div class="flex items-center gap-6">
+                        <a class='button hidden rounded-[50px] border-[#7F8995] bg-transparent text-black after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white lg:inline-block' href='/login' style="color: white !important;">Lets Talk</a>
+                        <!-- <a class='button hidden rounded-[50px] border-black bg-black text-white after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white lg:inline-block' href='/signup'>Sign
+                            up free</a> -->
+                        <!-- Responsive Offcanvas Menu Button -->
+                        <div class="block lg:hidden">
+                            <button id="openBtn" class="hamburger-menu mobile-menu-trigger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Header User Event -->
+                </div>
+            </div>
+        </header>
+        <!--...::: Header End :::... -->
+        
+
+        <main class="main-wrapper relative overflow-hidden">
+            <!--...::: Hero Section Start :::... -->
+<section id="section-hero">
+    <!-- Video Background -->
+    <div class="hero-video-container">
+        <video id="hero-video" autoplay muted loop playsinline>
+            <source src="assets/img/video.mp4" type="video/mp4">
+        </video>
+
+
+        <!-- Overlay -->
+        <div class="video-overlay"></div>
+
+        <!-- Fallback Image (Shown if video fails) -->
+        <!-- <div class="video-fallback">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2070&q=80"
+                 alt="AI Technology Background">
+        </div> -->
+    </div>
+
+    <!-- Section Container -->
+    <div class="container global-container">
+        <!-- Hero Content -->
+        <div class="hero-content mb-14 flex flex-column align-items-center text-center lg:mb-20 pt-28 pb-20 lg:pt-32 lg:pb-24 xl:pt-40 xxl:pb-[133px] xxl:pt-[195px]">
+            <h1 class="mb-6 max-w-[510px] lg:max-w-[768px] xl:max-w-[1076px] fw-bold" style="color: white;">
+                Smart Automation AI-Driven BMS
+            </h1>
+
+            <p class="mb-11 max-w-[700px] text-lg fw-semibold sm:text-xl xl:max-w-[980px]" style="color: white;">
+                Delivering intelligent Building Management Systems (BMS), factory automation, and advanced energy solutions worldwide.
+            </p>
+
+            <div class="d-flex flex-wrap justify-content-center gap-4">
+                <a href="#"
+                    class="button border-2 border-black bg-black text-white after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white" style="background-color: rgb(254 51 10) !important;" >
+                    Get Explore Solutions
+                </a>
+
+                <a href="#"
+                    class="button border-2 border-black bg-transparent text-black after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white"
+                    style="color: white !important;">
+                    Watch Demo
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+                        <!-- Hero Content -->
+                        <!-- Hero Image -->
+                      <!-- In your #section-hero, replace the hero-img div with this -->
+<!-- <div class="hero-reveal-wrapper">
+    <div class="jos hero-img reveal-hero-img overflow-hidden rounded-2xl bg-black data-jos-animationzoom">
+        <img src="assets/img/th-1/hero-dashboard.jpg" alt="hero-dashboard" width="1296" height="640" class="h-auto w-full hero-scroll-img">
+    </div>
+</div> -->
+
+                        <!-- Hero Image -->
+
+                        <div class="my-10 h-[1px] w-full bg-[#DBD6CF] lg:my-16 xl:my-20"></div>
+                        <div class="jos mx-auto mb-12 max-w-[715px] text-center lg:mb-16">
+                            <p class="text-lg" style="color: #1a1a1a;">
+                                20+ years of proven expertise across Asia and beyond
+AI-powered, IoT-enabled smart building controls
+Complete SCADA systems for industrial efficiency
+                            </p>
+                        </div>
+                        <!-- Marquee with IoT, SaaS, Energy, Sustainability keywords -->
+                        <div class="jos my-8" data-jos_animation="fade">
+                            <div class="overflow-hidden whitespace-nowrap rounded-[10px] border-2 py-4" style="background-color: #EFEAE3;">
+                                <div class="inline-block animate-marquee font-dmSans text-xl font-bold tracking-wide text-black px-8" style="color: #1a1a1a;">
+                                    IoT Solutions &nbsp; • &nbsp; System Integration &nbsp; • &nbsp; Energy Efficiency &nbsp; • &nbsp; Sustainability &nbsp; • &nbsp; Smart Buildings &nbsp; • &nbsp; Industrial Automation &nbsp; • &nbsp; AI-driven BMS &nbsp; • &nbsp; Renewable Energy &nbsp; • &nbsp; Cloud Integration &nbsp; • &nbsp; Data Analytics &nbsp; • &nbsp; IoT Solutions &nbsp; • &nbsp; SaaS Automation &nbsp; • &nbsp; Energy Efficiency &nbsp; • &nbsp; Sustainability &nbsp; • &nbsp; Smart Buildings &nbsp; • &nbsp; Industrial Automation &nbsp; • &nbsp; AI-driven BMS &nbsp; • &nbsp; Renewable Energy &nbsp; • &nbsp; Cloud Integration &nbsp; • &nbsp; Data Analytics
+                                </div>
+                            </div>
+                        </div>
+                        <style>
+                        @keyframes marquee {
+                            0% { transform: translateX(0); }
+                            100% { transform: translateX(-50%); }
+                        }
+                        .animate-marquee {
+                            display: inline-block;
+                            min-width: 200%;
+                            animation: marquee 30s linear infinite;
+                        }
+                        </style>
+                    </div>
+                    <!-- Section Container -->
+                    <!-- Hero Background Shape 1 -->
+                    <!-- <div
+                        class="orange-gradient-1 absolute -right-[150px] top-[370px] -z-[1] h-[500px] w-[500px] animate-spin rounded-[500px]">
+                    </div> -->
+                    <!-- Hero Background Shape 2 -->
+                    <!-- <div
+                        class="orange-gradient-2 absolute right-[57px] top-[620px] -z-[1] h-[450px] w-[450px] animate-spin rounded-[450px]">
+                    </div> -->
+                </div>
+                <!-- Section Spacer -->
+            </section>
+            <!--...::: Hero Section End :::... -->
+
+            <!--...::: Service Section Start :::... -->
+            <section id="section-service">
+                <!-- Section Spacer -->
+                <div class="pb-20 pt-20 xl:pb-[150px] xl:pt-[130px]">
+                    <!-- Section Container -->
+                    <div class="global-container">
+                        <!-- Section Content Block -->
+                        <div class="jos mb-10 lg:mb-16 xl:mb-20"  style="color: #1a1a1a;">
+                            <div class="md:max-w-sm lg:max-w-xl xl:max-w-[746px]" style="color: #1a1a1a;">
+                                <h2 class="" style="color: #1a1a1a;">Powering Innovation Across Multiple Sectors</h2>
+                            </div>
+                        </div>
+                        <!-- Section Content Block -->
+                        <!-- Service List -->
+                        <ul
+                            class="jos grid grid-cols-1 gap-[2px] overflow-hidden rounded-[10px] border-2 border-black bg-black sm:grid-cols-2 lg:grid-cols-4">
+                            <!-- Service Item -->
+                            <li class="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
+                                <div class="relative mb-9 h-[70px] w-[70px]">
+                                    <img src="assets/img/th-1/service-icon-black-1.svg" alt="" width="70" height="70" />
+                                    <img src="assets/img/th-1/service-icon-orange-1.svg" alt="service-icon-orange-1"
+                                        width="70" height="70"
+                                        class="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100" />
+                                </div>
+                                <h3
+                                    class="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]" style="color: #1a1a1a;">
+                                    <a class='hover:text-colorOrangyRed' href='/service-details'>
+                                        Smart <br>Hospitals
+                                    </a>
+                                </h3>
+                               <div class="parent">
+  <p class="text-change">
+    Advanced healthcare facility management with AI-powered environmental controls.
+  </p>
+</div>
+
+                                <a class='relative inline-block h-[30px] w-[30px] duration-300' href='/service-details'>
+                                    <img src="assets/img/th-1/arrow-right-black.svg" alt="arrow-right-black" width="30"
+                                        height="30" />
+                                    <img src="assets/img/th-1/arrow-right-orange.svg" alt="arrow-right-black" width="30"
+                                        height="30"
+                                        class="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100" />
+                                </a>
+                            </li>
+                            <!-- Service Item -->
+                            <!-- Service Item -->
+                            <li class="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
+                                <div class="relative mb-9 h-[70px] w-[70px]">
+                                    <img src="assets/img/th-1/service-icon-black-2.svg" alt="service-icon-black-2"
+                                        width="70" height="70" />
+                                    <img src="assets/img/th-1/service-icon-orange-2.svg" alt="service-icon-orange-1"
+                                        width="70" height="70"
+                                        class="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100" />
+                                </div>
+
+                                <h3
+                                    class="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]" style="color: #1a1a1a;">
+                                    <a class='hover:text-colorOrangyRed' href='/service-details'>
+                                        Semiconductor Manufacturing
+                                    </a>
+                                </h3>
+                                <div class="parent">
+  <p class="text-change">
+                                    Precision environmental control for cleanroom and manufacturing environments.
+  </p>
+</div>
+
+                                <a class='relative inline-block h-[30px] w-[30px] duration-300' href='/service-details'>
+                                    <img src="assets/img/th-1/arrow-right-black.svg" alt="arrow-right-black" width="30"
+                                        height="30" />
+                                    <img src="assets/img/th-1/arrow-right-orange.svg" alt="arrow-right-black" width="30"
+                                        height="30"
+                                        class="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100" />
+                                </a>
+                                <!-- Features Item -->
+                                <!-- Features Item -->
+                            </li>
+                            <!-- Service Item -->
+                            <!-- Service Item -->
+                            <li class="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
+                                <div class="relative mb-9 h-[70px] w-[70px]">
+                                    <img src="assets/img/th-1/service-icon-black-3.svg" alt="service-icon-black-3"
+                                        width="70" height="70" />
+                                    <img src="assets/img/th-1/service-icon-orange-3.svg" alt="service-icon-orange-3"
+                                        width="70" height="70"
+                                        class="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100" />
+                                </div>
+                                <h3
+                                    class="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]" style="color: #1a1a1a;">
+                                    <a class='hover:text-colorOrangyRed' href='/service-details'>
+                                        Logistics & Warehousing
+                                    </a>
+                                </h3>
+                                <div class="parent">
+  <p class="text-change">
+                                   Automated warehouse management and supply chain optimization.
+  </p>
+</div>
+
+                                <a class='relative inline-block h-[30px] w-[30px] duration-300' href='/service-details'>
+                                    <img src="assets/img/th-1/arrow-right-black.svg" alt="arrow-right-black" width="30"
+                                        height="30" />
+                                    <img src="assets/img/th-1/arrow-right-orange.svg" alt="arrow-right-black" width="30"
+                                        height="30"
+                                        class="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100" />
+                                </a>
+                            </li>
+                            <!-- Service Item -->
+                            <!-- Service Item -->
+                            <li class="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
+                                <div class="relative mb-9 h-[70px] w-[70px]">
+                                    <img src="assets/img/th-1/service-icon-black-4.svg" alt="service-icon-black-4"
+                                        width="70" height="70" />
+                                    <img src="assets/img/th-1/service-icon-orange-4.svg" alt="service-icon-orange-4"
+                                        width="70" height="70"
+                                        class="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100" />
+                                </div>
+                                <h3
+                                    class="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]" style="color: #1a1a1a;">
+                                    <a class='hover:text-colorOrangyRed' href='/service-details'>
+                                        Commercial <br>Buildings
+                                    </a>
+                                </h3>
+                                <div class="parent">
+  <p class="text-change">
+                                    Intelligent building management for office complexes and commercial spaces.
+  </p>
+</div>
+
+                                <a class='relative inline-block h-[30px] w-[30px] duration-300' href='/service-details'>
+                                    <img src="assets/img/th-1/arrow-right-black.svg" alt="arrow-right-black" width="30"
+                                        height="30" />
+                                    <img src="assets/img/th-1/arrow-right-orange.svg" alt="arrow-right-black" width="30"
+                                        height="30"
+                                        class="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100" />
+                                </a>
+                            </li>
+                            <!-- Service Item -->
+                        </ul>
+                        <!-- Service List -->
+                    </div>
+                    <!-- Section Container -->
+                </div>
+                <!-- Section Spacer -->
+            </section>
+            <!--...::: Service Section End :::... -->
+
+            <!--...::: Content Section Start :::... -->
+            <section id="content-section-1">
+                <!-- Section Spacer -->
+                <div class="pb-20 xl:pb-[150px]">
+                    <!-- Section Container -->
+                    <div class="global-container">
+                        <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20 xl:gap-28 xxl:gap-32">
+                            <!-- Content Left Block -->
+                            <div class="jos order-2 overflow-hidden rounded-md md:order-1"
+                                data-jos_animation="fade-left">
+                                <img src="assets/img/th-1/content-image-1.jpg" alt="content-image-1" width="526"
+                                    height="450" class="h-auto w-full" />
+                            </div>
+                            <!-- Content Left Block -->
+                            <!-- Content Right Block -->
+                            <div class="jos order-1 md:order-2" data-jos_animation="fade-right">
+                                <!-- Section Content Block -->
+                                <div class="mb-6" style="color: #1a1a1a;">
+                                    <h2 class="" style="color: #1a1a1a;">Smart BMS with AI + IoT</h2>
+                                </div>
+                                <!-- Section Content Block -->
+                                <div class="text-lg leading-[1.4] lg:text-[21px]">
+                                    <p class="mb-7 last:mb-0" style="color: #1a1a1a;">
+                                        We've enhanced our BMS portfolio with AI and IoT to provide intelligent, real-time building control that learns and adapts to optimize performance.
+                                    </p>
+                                    <p class="mb-7 last:mb-0" style="color: #1a1a1a;">
+                                        Unilogic Technologies Pte. Ltd. is a Singapore‑based engineering firm specializing in energy, automation, software services, and hardware products. We offer system integration, product supply, and consultancy in industrial controls, factory automation, and building management.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Content Right Block -->
+                        </div>
+                    </div>
+                    <!-- Section Container -->
+                </div>
+                <!-- Section Spacer -->
+            </section>
+            <!--...::: Content Section End :::... -->
+
+            <!--...::: Content Section Start :::... -->
+            <section id="content-section-2">
+                <!-- Section Spacer -->
+                <div class="pb-20 xl:pb-[150px]">
+                    <!-- Section Container -->
+                    <div class="global-container">
+                        <div
+                            class="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20 xl:grid-cols-[minmax(0,_1.2fr)_1fr] xl:gap-28 xxl:gap-32">
+                            <!-- Content Left Block -->
+                            <div class="jos order-2 overflow-hidden rounded-md" data-jos_animation="fade-left">
+                                <img src="assets/img/bms-dashboard-BuwoACg0.jpg" alt="content-image-2" width="526"
+                                    height="450" class="h-auto w-full" />
+                            </div>
+                            <!-- Content Left Block -->
+                            <!-- Content Right Block -->
+                            <div class="jos order-1" data-jos_animation="fade-right">
+                                <!-- Section Content Block -->
+                                <div class="mb-6" style="color: #1a1a1a;">
+                                    <h2 class="" style="color: #1a1a1a;">Transform Your Building with Smart BMS</h2>
+                                </div>
+                                <!-- Section Content Block -->
+                                <div class="text-lg leading-[1.4] lg:text-[21px]">
+                                    <p class="mb-7 last:mb-0" style="color: #1a1a1a;">
+                                       Experience next-generation Building Management Systems with AI-driven automation, real-time monitoring, and predictive maintenance capabilities.
+                                    </p>
+                                    <ul
+                                        class="flex flex-col gap-y-5 font-dmSans text-xl leading-tight tracking-tighter text-black lg:mt-12 lg:text-[28px]">
+                                        <li class="flex items-start gap-x-3" style="color: #1a1a1a;">
+                                            <div class="mt-[2.5px] h-[30px] w-[30px]">
+                                                <img src="assets/img/th-1/check-circle.svg" alt="check-circle"
+                                                    width="30" height="30" class="h-full w-full" />
+                                            </div>
+                                            Energy Efficiency up to 30%
+                                        </li>
+                                        <li class="flex items-start gap-x-3" style="color: #1a1a1a;">
+                                            <div class="mt-[2.5px] h-[30px] w-[30px]">
+                                                <img src="assets/img/th-1/check-circle.svg" alt="check-circle"
+                                                    width="30" height="30" class="h-full w-full" />
+                                            </div>
+                                            
+24/7 Real-time Monitoring
+                                        </li>
+                                        <li class="flex items-start gap-x-3" style="color: #1a1a1a;">
+                                            <div class="mt-[2.5px] h-[30px] w-[30px]">
+                                                <img src="assets/img/th-1/check-circle.svg" alt="check-circle"
+                                                    width="30" height="30" class="h-full w-full" />
+                                            </div>
+                                            Predictive Maintenance Alerts
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Content Right Block -->
+                        </div>
+                    </div>
+                    <!-- Section Container -->
+                </div>
+                <!-- Section Spacer -->
+            </section>
+            <!--...::: Content Section End :::... -->
+
+            <!--...::: Funfact Section Start :::... -->
+            <section id="funfact-section">
+                <div class="mx-auto max-w-[1500px] px-5">
+                    <div
+                        class="jos grid grid-cols-1 overflow-hidden rounded-[30px] bg-black lg:rounded-[50px] xl:grid-cols-[minmax(400px,_1fr)_1.5fr] xxl:grid-cols-[1fr_minmax(800px,_1fr)]">
+                        <!-- Funfact Left Block -->
+                        <div class="relative overflow-hidden rounded-[30px] lg:rounded-[50px]">
+                            <img src="assets/img/th-1/funfact-image.jpg" alt="funfact-image" width="721" height="784"
+                                class="h-80 w-full object-cover object-center lg:h-[35rem] xl:h-full" />
+                            <!-- Video Play Button -->
+                            <a data-fslightbox="gallery" href="https://www.youtube.com/watch?v=3nQNiWdeH2Q"
+                                class="absolute left-1/2 top-1/2 z-[1] -translate-x-1/2 -translate-y-1/2">
+                                <div
+                                    class="relative flex h-[120px] w-[120px] items-center justify-center rounded-full border-[3px] border-black text-lg font-bold backdrop-blur-[2px] transition-all duration-300 hover:bg-colorOrangyRed hover:text-white">
+                                    Play
+                                    <div
+                                        class="absolute -z-[1] h-[110%] w-[110%] animate-[ping_1.5s_ease-in-out_infinite] rounded-full bg-gray-600 opacity-30">
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Video Play Button -->
+                        </div>
+                        <!-- Funfacct Left Block -->
+
+                        <!-- Funfact Right Block -->
+                        <div
+                            class="self-center px-6 py-16 sm:py-20 md:px-16 xl:px-10 xl:py-24 xxl:py-32 xxl:pl-16 xxl:pr-28">
+                            <!-- Section Content Block -->
+                            <div class="mb-8 lg:mb-16 xl:mb-6">
+                                <h2 class="text-white">Intelligent Control Systems</h2>
+                            </div>
+                            <!-- Section Content Block -->
+                            <div class="text-left text-lg leading-[1.4] text-white lg:text-[21px]">
+                                <p class="mb-7 last:mb-0">
+                                    We specialize in designing, deploying, and maintaining intelligent control systems—including AI-powered Building Management Systems (BMS)—that improve operational efficiency, comfort, and sustainability.
+                                </p>
+                            </div>
+                            <!-- Horizontal Separator -->
+                            <div class="my-14 h-[1px] w-full bg-colorCodGray"></div>
+                            <!-- Counter Scroll -->
+                            <ul
+                                class="flex flex-col justify-center gap-x-11 gap-y-8 text-center sm:flex-row md:text-left xl:justify-normal xl:text-left xxl:gap-x-20">
+                                <!-- Counter Items -->
+                                <li>
+                                    <h3 class="text-5xl text-colorOrangyRed md:text-6xl lg:text-7xl xl:text-7xl xxl:text-[120px]"
+                                        data-module="countup">
+                                        <span class="start-number" data-countup-number="20">20</span>+
+                                    </h3>
+                                    <span class="block text-lg font-normal text-white lg:text-[21px]">
+                                        Years Experience
+                                    </span>
+                                </li>
+                                <!-- Counter Items -->
+                                <!-- Counter Items -->
+                                <li>
+                                    <h3 class="text-5xl text-colorOrangyRed md:text-6xl lg:text-7xl xl:text-7xl xxl:text-[120px]"
+                                        data-module="countup">
+                                        <span class="start-number" data-countup-number="500">500</span>+
+                                    </h3>
+                                    <span class="block text-lg font-normal text-white lg:text-[21px]">
+                                        Projects Delivered
+                                    </span>
+                                </li>
+                                <!-- Counter Items -->
+                            </ul>
+                            <!-- Counter Scroll -->
+                        </div>
+                        <!-- Funfact Right Block -->
+                    </div>
+                </div>
+            </section>
+            <!--...::: Funfact Section End :::... -->
+
+            <!--...::: Pricing Section Start :::... -->
+<section class="pricing-section">
+    <!-- Section Spacer -->
+    <div class="pb-20 pt-20 xl:pb-[150px] xl:pt-[130px]">
+        <!-- Section Container -->
+        <div class="global-container">
+            <!-- Section Content Block -->
+            <div class="jos mb-10 text-center lg:mb-12">
+                <div class="mx-auto md:max-w-xs lg:max-w-xl xl:max-w-[746px]" style="color: #1a1a1a;">
+                    <h2 style="color: #1a1a1a;">Engineering the Future of Smart Buildings</h2>
+                </div>
+            </div>
+            <!-- Pricing Block -->
+            <div class="container mx-auto">
+                <!-- Pricing Block -->
+                <div class="mt-12 lg:mt-16 xl:mt-20">
+                    <!-- Monthly Pricing - 2 cards on xl+ (1200px+) -->
+                    <ul id="monthly" class="tab-content grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-2">
+                        <!-- Price Item 1 -->
+                        <li class="jos group flex flex-col rounded-[10px] bg-colorLinenRuffle p-10 transition-all duration-300 ease-linear hover:bg-black" data-jos_animation="flip" data-jos_delay="0">
+                            <h3 class="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black !group-hover:text-[#fe33a] transition-all duration-300 ease-linear" style="color: #1a1a1a;">
+                                Systems Integration
+                            </h3>
+                            <div class="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
+                            <p class="mb-10 text-lg text-black !group-hover:text-white transition-all duration-300 ease-linear" style="color: #1a1a1a;">
+                                We provide expert systems integration services to seamlessly connect your building management systems with existing infrastructure.
+                                <br>Our team ensures reliable communication between devices, software, and networks for optimal performance and scalability.
+                                <br>Benefit from tailored solutions, robust security, and ongoing support for all your automation and control needs.
+                            </p>
+                            <a class="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-black group-hover:border-colorOrangyRed group-hover:text-white" href="/pricing">
+                                Know More
+                            </a>
+                        </li>
+                        
+                        <!-- Price Item 2 -->
+                        <li class="jos group flex flex-col rounded-[10px] bg-colorLinenRuffle p-10 transition-all duration-300 ease-linear hover:bg-black" data-jos_animation="flip" data-jos_delay="0.1">
+                            <h3 class="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black !group-hover:text-[#fe33a] transition-all duration-300 ease-linear" style="color: #1a1a1a;">
+                                AI & IoT Expertise
+                            </h3>
+                            <div class="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
+                            <p class="mb-10 text-lg text-black !group-hover:text-white transition-all duration-300 ease-linear" style="color: #1a1a1a;">
+                                Cutting-edge artificial intelligence and Internet of Things solutions to enhance building automation and efficiency.
+                                <br>Our expertise covers sensor integration, data analytics, and cloud connectivity for smart buildings and industrial automation.
+                                <br>We deliver scalable, secure, and future-ready systems that maximize operational performance and energy savings.
+                            </p>
+                            <a class="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-black group-hover:border-colorOrangyRed group-hover:text-white" href="/pricing">
+                                Know More
+                            </a>
+                        </li>
+                        
+                        <!-- Price Item 3 -->
+                        <li class="jos group flex flex-col rounded-[10px] bg-colorLinenRuffle p-10 transition-all duration-300 ease-linear hover:bg-black" data-jos_animation="flip" data-jos_delay="0.2">
+                            <h3 class="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black !group-hover:text-[#fe33a] transition-all duration-300 ease-linear" style="color: #1a1a1a;">
+                                Energy Efficiency
+                            </h3>
+                            <div class="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
+                            <p class="mb-10 text-lg text-black !group-hover:text-white transition-all duration-300 ease-linear" style="color: #1a1a1a;">
+                                Advanced energy management and sustainability solutions.
+                                <br>Our team delivers smart metering, demand response, and automated energy optimization for buildings and factories.
+                                <br>Reduce operational costs, lower carbon footprint, and achieve compliance with global energy standards.
+                            </p>
+                            <a class="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-black group-hover:border-colorOrangyRed group-hover:text-white" href="/pricing">
+                                Know More
+                            </a>
+                        </li>
+                        
+                        <!-- Price Item 4 -->
+                        <li class="jos group flex flex-col rounded-[10px] bg-colorLinenRuffle p-10 transition-all duration-300 ease-linear hover:bg-black" data-jos_animation="flip" data-jos_delay="0.3">
+                            <h3 class="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black !group-hover:text-[#fe33a] transition-all duration-300 ease-linear" style="color: #1a1a1a;">
+                                Global Reach
+                            </h3>
+                            <div class="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
+                            <p class="mb-10 text-lg text-black !group-hover:text-white transition-all duration-300 ease-linear" style="color: #1a1a1a;">
+                                Serving clients across Asia, Americas, and beyond since 2003.
+                                <br>Our global network enables rapid deployment, local support, and tailored solutions for diverse industries.
+                                <br>We deliver scalable automation, energy management, and smart building technologies worldwide.
+                            </p>
+                            <a class="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-black group-hover:border-colorOrangyRed group-hover:text-white" href="/pricing">
+                                Know More
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Annually Pricing - 2 cards on xl+ (1200px+) -->
+                    <ul id="annually" class="tab-content grid hidden grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-2">
+                        <!-- Your existing annually li elements here - unchanged -->
+                        <!-- Just change grid class to: grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-2 -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!--...::: Pricing Section End :::... -->
+
+            <!--...::: FAQ Section Start :::... -->
+            <section class="faq-section">
+                <!-- Section Spacer -->
+                <div class="pb-20 xl:pb-[150px]">
+                    <!-- Section Container -->
+                    <div class="global-container">
+                        <div class="grid grid-cols-1 gap-y-10 md:grid-cols-2">
+                            <!-- FAQ Left Block -->
+                            <div class="jos flex flex-col" data-jos_animation="fade-right">
+                                <!-- Section Content Block -->
+                                <div class="mb-6">
+                                    <div class="mx-auto md:mx-0 md:max-w-none" style="color: #1a1a1a;">
+                                        <h2 class="" style="color: #1a1a1a;">Ready to Transform Your Operations?</h2>
+                                    </div>
+                                </div>
+                                <!-- Section Content Block -->
+                                <div class="text-lg leading-[1.4] lg:text-[21px]">
+                                    <p class="mb-7 last:mb-0" style="color: #1a1a1a;">
+                                        Let's discuss how our AI-powered solutions can optimize your building management, industrial processes, and energy efficiency.
+                                    </p>
+                                    <a class='button mt-5 rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white' href='/faq'>
+                                        Get in Touch</a>
+                                </div>
+                            </div>
+                            <!-- FAQ Left Block -->
+
+                            <!-- FAQ Right Block -->
+                            <div class="jos md:ml-10 lg:ml-20 xl:ml-32" data-jos_animation="fade-left">
+                                <!-- Accordion-->
+                                <ul class="accordion">
+                                    <!-- Accordion items -->
+                                    <li
+                                        class="accordion-item border-b-[1px] border-[#DBD6CF] pb-6 pt-6 first:pt-0 last:border-b-0 last:pb-0 active">
+                                        <div
+                                            class="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]" style="color: #1a1a1a;">
+                                            <p>How do I start AI SaaS?</p>
+                                            <div class="accordion-icon">
+                                                <img src="assets/img/plus.svg" alt="plus" />
+                                            </div>
+                                        </div>
+                                        <div class="accordion-content text-[#2C2C2C]" style="color: #1a1a1a;">
+                                            <p>
+                                                Go to the our official website and require users to
+                                                create an account. You'll need to provide some basic
+                                                information and agree to our terms and conditions.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <!-- Accordion items -->
+                                    <!-- Accordion items -->
+                                    <li
+                                        class="accordion-item border-b-[1px] border-[#DBD6CF] pb-6 pt-6 first:pt-0 last:border-b-0 last:pb-0">
+                                        <div
+                                            class="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]" style="color: #1a1a1a;">
+                                            <p>Can I customize AI SaaS solutions?</p>
+                                            <div class="accordion-icon">
+                                                <img src="assets/img/plus.svg" alt="plus" />
+                                            </div>
+                                        </div>
+                                        <div class="accordion-content text-[#2C2C2C]" style="color: #1a1a1a;">
+                                            <p>
+                                                Go to the our official website and require users to
+                                                create an account. You'll need to provide some basic
+                                                information and agree to our terms and conditions.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <!-- Accordion items -->
+                                    <!-- Accordion items -->
+                                    <li
+                                        class="accordion-item border-b-[1px] border-[#DBD6CF] pb-6 pt-6 first:pt-0 last:border-b-0 last:pb-0">
+                                        <div
+                                            class="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]" style="color: #1a1a1a;">
+                                            <p>How can AI benefit my business?</p>
+                                            <div class="accordion-icon">
+                                                <img src="assets/img/plus.svg" alt="plus" />
+                                            </div>
+                                        </div>
+                                        <div class="accordion-content text-[#2C2C2C]" style="color: #1a1a1a;">
+                                            <p>
+                                                Go to the our official website and require users to
+                                                create an account. You'll need to provide some basic
+                                                information and agree to our terms and conditions.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- Accordion-->
+                            </div>
+                            <!-- FAQ Right Block -->
+                        </div>
+                    </div>
+                    <!-- Section Container -->
+                </div>
+                <!-- Section Spacer -->
+            </section>
+            <!--...::: FAQ Section End :::... -->
+
+            <!--...::: Testimonial Section Start :::... -->
+            <section class="testimonial-section">
+                <!-- Section Spacer -->
+                <div class="bg-black pb-40 pt-20 xl:pb-[200px] xl:pt-[130px]">
+                    <!-- Section Container -->
+                    <div class="global-container">
+                        <!-- Section Content Block -->
+                        <div class="jos mb-10 text-center lg:mb-16 xl:mb-20">
+                            <div class="mx-auto max-w-[300px] lg:max-w-[600px] xl:max-w-[680px]">
+                                <h2 class="text-white">Positive feedback from our users</h2>
+                            </div>
+                        </div>
+                        <!-- Section Content Block -->
+
+                        <!-- Testimonial List -->
+                        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                            <!-- Testimonial Item -->
+                            <div class="jos flex flex-col gap-y-8 rounded-[10px] border-[1px] border-colorCodGray p-[30px] text-white"
+                                data-jos_animation="fade-left" data-jos_delay="0.1">
+                                <div class="block">
+                                    <img src="assets/img/th-1/rating.svg" alt="rating" width="146" height="25" />
+                                </div>
+                                <p>
+                                    “This AI SaaS tool has revolutionized the way we process and
+                                    analyze data. This is a game-changer for our business.”
+                                </p>
+                                <div class="flex items-center gap-x-4">
+                                    <div class="h-[60px] w-[60px] overflow-hidden rounded-full">
+                                        <img src="assets/img/th-1/testimonial-img-1.jpg" alt="testimonial-img"
+                                            width="60" height="60" class="h-full w-full object-cover object-center" />
+                                    </div>
+                                    <div class="flex flex-col gap-y-1">
+                                        <span class="block text-lg font-semibold leading-[1.6]">
+                                            Max Weber
+                                        </span>
+                                        <span class="block text-sm font-light leading-[1.4]">
+                                            HR Manager
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial Item -->
+                            <!-- Testimonial Item -->
+                            <div class="jos flex flex-col gap-y-8 rounded-[10px] border-[1px] border-colorCodGray p-[30px] text-white"
+                                data-jos_animation="fade-left" data-jos_delay="0.2">
+                                <div class="block">
+                                    <img src="assets/img/th-1/rating.svg" alt="rating" width="146" height="25" />
+                                </div>
+                                <p>
+                                    "It answers immediately, and we've seen a significant
+                                    reduction in response time. Our customers love it and so do
+                                    we!"
+                                </p>
+                                <div class="flex items-center gap-x-4">
+                                    <div class="h-[60px] w-[60px] overflow-hidden rounded-full">
+                                        <img src="assets/img/th-1/testimonial-img-2.jpg" alt="testimonial-img"
+                                            width="60" height="60" class="h-full w-full object-cover object-center" />
+                                    </div>
+                                    <div class="flex flex-col gap-y-1">
+                                        <span class="block text-lg font-semibold leading-[1.6]">
+                                            Douglas Smith
+                                        </span>
+                                        <span class="block text-sm font-light leading-[1.4]">
+                                            Businessman
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial Item -->
+                            <!-- Testimonial Item -->
+                            <div class="jos flex flex-col gap-y-8 rounded-[10px] border-[1px] border-colorCodGray p-[30px] text-white"
+                                data-jos_animation="fade-left" data-jos_delay="0.3">
+                                <div class="block">
+                                    <img src="assets/img/th-1/rating.svg" alt="rating" width="146" height="25" />
+                                </div>
+                                <p>
+                                    "It is accurate, fast and supports multiple languages
+                                    support. It is a must for any international business
+                                    success."
+                                </p>
+                                <div class="flex items-center gap-x-4">
+                                    <div class="h-[60px] w-[60px] overflow-hidden rounded-full">
+                                        <img src="assets/img/th-1/testimonial-img-3.jpg" alt="testimonial-img"
+                                            width="60" height="60" class="h-full w-full object-cover object-center" />
+                                    </div>
+                                    <div class="flex flex-col gap-y-1">
+                                        <span class="block text-lg font-semibold leading-[1.6]">
+                                            Abraham Maslo
+                                        </span>
+                                        <span class="block text-sm font-light leading-[1.4]">
+                                            Founder @ Marketing Company
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial Item -->
+                            <!-- Testimonial Item -->
+
+                            <!-- Testimonial Item -->
+                        </div>
+                        <!-- Testimonial List -->
+                    </div>
+                    <!-- Section Container -->
+                </div>
+                <!-- Section Spacer -->
+            </section>
+            <!--...::: Testimonial Section Start :::... -->
+
+            <!-- Body Background Shape 1 -->
+            <!-- <div
+                class="orange-gradient-1 absolute -left-[15px] top-[61%] -z-[1] h-[400px] w-[400px] -rotate-[-9.022deg] rounded-[400px]">
+            </div> -->
+
+            <!-- Body Background Shape 2 -->
+            <!-- <div
+                class="orange-gradient-2 absolute -left-[100px] top-[64%] -z-[1] h-[360px] w-[360px] -rotate-[-9.022deg] rounded-[360px]">
+            </div> -->
+        </main>
+
+        <!--...::: Footer Section Start :::... -->
+        <footer
+            class="relative z-[1] -mt-[70px] overflow-hidden rounded-tl-[30px] rounded-tr-[30px] bg-colorLinenRuffle lg:rounded-tl-[50px] lg:rounded-tr-[50px] " style="background-color: rgb(241 241 241);">
+            <!-- Footer Top -->
+            <div class="py-[60px] xl:pb-[100px] xl:pt-[130px]">
+                <div class="overflow-hidden">
+                    <!-- Footer Text Slider -->
+                    <div class="footer-text-slider flex w-full items-center gap-x-[30px] whitespace-nowrap">
+                        <!-- Footer Slide Item  -->
+                        <img src="assets/img/th-1/footer-text-slider-icon.svg" alt="footer-text-slider-icon" width="60"
+                            height="60" class="h-10 w-10 lg:h-[60px] lg:w-[60px]" />
+                        <div
+                            class="block font-dmSans text-4xl font-bold leading-none -tracking-[2px] text-black lg:text-6xl xl:text-7xl xxl:text-[80px]" style="color: #1a1a1a;">
+                            Start building software
+                        </div>
+                        <!-- Footer Slide Item  -->
+                        <!-- Footer Slide Item  -->
+                        <img src="assets/img/th-1/footer-text-slider-icon.svg" alt="footer-text-slider-icon" width="60"
+                            height="60" class="h-10 w-10 lg:h-[60px] lg:w-[60px]" />
+                        <div
+                            class="block font-dmSans text-4xl font-bold leading-none -tracking-[2px] text-black lg:text-6xl xl:text-7xl xxl:text-[80px]" style="color: #1a1a1a;">
+                            Process & Factory Automation
+                        </div>
+                        <!-- Footer Slide Item  -->
+                        <!-- Footer Slide Item  -->
+                        <img src="assets/img/th-1/footer-text-slider-icon.svg" alt="footer-text-slider-icon" width="60"
+                            height="60" class="h-10 w-10 lg:h-[60px] lg:w-[60px]" />
+                        <div
+                            class="block font-dmSans text-4xl font-bold leading-none -tracking-[2px] text-black lg:text-6xl xl:text-7xl xxl:text-[80px]" style="color: #1a1a1a;">
+                           Energy Efficiency & Metering
+                        </div>
+                        <!-- Footer Slide Item  -->
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Text Slider -->
+            <!-- Footer Top -->
+            <div class="global-container" style="color: #1a1a1a;">
+                <div class="h-[1px] w-full bg-[#DBD6CF]"></div>
+                <!-- Footer Center -->
+                <div
+                    class="lg grid grid-cols-1 gap-10 py-[60px] md:grid-cols-[1fr_auto_auto] xl:grid-cols-[1fr_auto_auto_1fr] xl:gap-20 xl:py-[100px];" style="margin-bottom: -10px;">
+                    <!-- Footer Widget -->
+                    <div class="flex flex-col gap-y-6">
+                        <a class='inline-block' href='/'><img src="assets/img/3b07afe1-32a1-4c5f-a8e7-ee8b19d5b9c4-removebg-preview.png" alt="logo"
+                                width="96" height="24"  style="color: #1a1a1a;"/></a>
+                        <p class=" " style="color: #1a1a1a;">
+                            Since 2003, we've been engineering AI-powered, IoT-enabled controls for smarter buildings, industrial efficiency, and sustainability across Asia and beyond.
+                        </p>
+                        <p class=""  style="color: #1a1a1a;">
+                            Website: <a href="https:/info@unilogic-tech.com">info@unilogic-tech.com</a>
+                        </p>
+                    </div>
+                    <!-- Footer Widget -->
+
+                    <!-- Footer Widget -->
+                    <div class="flex flex-col gap-y-6">
+                        <!-- Footer Title -->
+                        <h4 class="text-[21px] font-semibold capitalize text-black" style="color: #1a1a1a;">
+                            Primary Pages
+                        </h4>
+                        <!-- Footer Title -->
+
+                        <!-- Footer Navbar -->
+                        <ul class="flex flex-col gap-y-[10px] capitalize">
+                            <li>
+                                <a class='transition-all duration-300 ease-linear hover:text-colorOrangyRed' href='/' style="color: #1a1a1a;">Home</a>
+                            </li>
+                            <li>
+                                <a class='transition-all duration-300 ease-linear hover:text-colorOrangyRed' href='/about' style="color: #1a1a1a;">About
+                                    Us</a>
+                            </li>
+                            <li>
+                                <a class='transition-all duration-300 ease-linear hover:text-colorOrangyRed' href='/services' style="color: #1a1a1a;">Services</a>
+                            </li>
+                            <li>
+                                <a class='transition-all duration-300 ease-linear hover:text-colorOrangyRed' href='/pricing' style="color: #1a1a1a;">pricing</a>
+                            </li>
+                            <li>
+                                <a class='transition-all duration-300 ease-linear hover:text-colorOrangyRed' href='/contact' style="color: #1a1a1a;">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Footer Widget -->
+
+                    <!-- Footer Widget -->
+                    <div class="flex flex-col gap-y-6">
+                        <!-- Footer Title -->
+                        <h4 class="text-[21px] font-semibold capitalize text-black" style="color: #1a1a1a;">
+                            Utility pages
+                        </h4>
+                        <!-- Footer Title -->
+
+                        <!-- Footer Navbar -->
+                        <ul class="flex flex-col gap-y-[10px] capitalize">
+                            <li>
+                                <a class='transition-all duration-300 ease-linear hover:text-colorOrangyRed' href='/signup' style="color: #1a1a1a;">Signup</a>
+                            </li>
+                            <li>
+                                <a class='transition-all duration-300 ease-linear hover:text-colorOrangyRed' href='/login' style="color: #1a1a1a;">Login</a>
+                            </li>
+                            <li>
+                                <a class='transition-all duration-300 ease-linear hover:text-colorOrangyRed' href='/error-404' style="color: #1a1a1a;">404 Not
+                                    found</a>
+                            </li>
+                            <li>
+                                <a class='transition-all duration-300 ease-linear hover:text-colorOrangyRed' href='/reset-password' style="color: #1a1a1a;">Password
+                                    Reset</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Footer Widget -->
+
+                    <!-- Footer Widget -->
+                    <div class="flex flex-col gap-y-6">
+                        <!-- Footer Title -->
+                        <h4 class="text-[21px] font-semibold capitalize text-black"  style="color: #1a1a1a;">
+                            Subscribe to our newsletter
+                        </h4>
+                        <!-- Footer Title -->
+                        <!-- Footer Subscriber Form -->
+                        <form action="#" method="post" class="">
+                            <div class="relative h-[50px] max-w-[300px]">
+                                <input type="email" name="newsletter-email" id="newsletter-email"
+                                    placeholder="Enter your email"
+                                    class="p-y-[18px] h-full w-full rounded-[50px] border-[1px] border-black px-[24px] pr-20 outline-none"
+                                    required />
+                                <button type="submit"
+                                    class="absolute right-[5px] top-[50%] inline-block h-10 -translate-y-[50%] rounded-[50px] bg-black px-6 transition-all hover:bg-orange-500">
+                                    <img src="assets/img/th-1/arrow-right-large.svg" alt="newsletter" />
+                                </button>
+                            </div>
+                        </form>
+                        <!-- Footer Subscriber Form -->
+                    </div>
+                    <!-- Footer Widget -->
+                </div>
+                <!-- Footer Center -->
+                <div class="h-[1px] w-full bg-[#DBD6CF]"></div>
+                <!-- Footer Bottom -->
+                <div class="py-9 text-center" style="color: #1a1a1a;">
+                    <p>&copy; Copyright 2025, All Rights Reserved by <a href="https://www.levlox.tech/">Levlox</a></p>
+                </div>
+                <!-- Footer Bottom -->
+            </div>
+
+            <!-- Footer Background Shape 1  -->
+            <div
+                style="background: radial-gradient(circle at 30% 30%, #aee9ff 0%, #e3f6ff 100%);"
+                class="absolute -top-[290px] right-[90px] -z-[1] h-[406px] w-[406px] -rotate-[58deg] rounded-[406px]">
+            </div>
+
+            <!-- Footer Background Shape 2  -->
+            <div
+                style="background: radial-gradient(circle at 30% 30%, #aee9ff 0%, #e3f6ff 100%);"
+                class="absolute -right-[200px] -top-[205px] -z-[1] h-[451px] w-[451px] -rotate-[58deg] rounded-[451px]">
+            </div>
+
+            <!-- <div
+                class="orange-gradient-2 absolute -top-[290px] right-[90px] -z-[1] h-[406px] w-[406px] -rotate-[58deg] rounded-[406px]">
+            </div>
+
+            <div
+                class="orange-gradient-1 absolute -right-[200px] -top-[205px] -z-[1] h-[451px] w-[451px] -rotate-[58deg] rounded-[451px]">
+            </div> -->
+        </footer>
+        <!--...::: Footer Section End :::... -->
+    </div>
+    <!-- Holo Effect Overlay -->
+     <style>
+
+         .c-holo-effect {
+             position: fixed;
+             left: 0;
+             top: 0;
+             width: 100vw;
+             height: 100vh;
+             pointer-events: none;
+             z-index: 999;
+             background: transparent;
+             transition: background 0.3s;
+         }
+         .c-holo-effect__holo {
+             position: absolute;
+             left: 50%;
+             top: 50%;
+             width: 400px;
+             height: 400px;
+             transform: translate(-50%, -50%);
+             background: radial-gradient(circle, rgba(180,255,255,0.25) 0%, rgba(255,255,255,0) 80%);
+             border-radius: 50%;
+             filter: blur(40px);
+             opacity: 0.7;
+         }
+         .c-holo-effect__blur {
+             position: absolute;
+             left: 0;
+             top: 0;
+             width: 100%;
+             height: 100%;
+             pointer-events: none;
+         }
+         .c-holo-effect__blur-layer {
+             position: absolute;
+             display: block;
+             width: 60vw;
+             height: 60vw;
+             left: 20vw;
+             top: 20vh;
+             background: radial-gradient(circle, rgba(200,200,255,0.12) 0%, rgba(255,255,255,0) 80%);
+             border-radius: 50%;
+             filter: blur(60px);
+             opacity: 0.5;
+             animation: holo-blur-move 8s infinite linear alternate;
+         }
+         .c-holo-effect__blur-layer:nth-child(2) {
+             left: 60vw;
+             top: 40vh;
+             width: 30vw;
+             height: 30vw;
+             opacity: 0.3;
+             animation-delay: 2s;
+         }
+         .c-holo-effect__blur-layer:nth-child(3) {
+             left: 10vw;
+             top: 70vh;
+             width: 40vw;
+             height: 40vw;
+             opacity: 0.25;
+             animation-delay: 4s;
+         }
+         .c-holo-effect__blur-layer:nth-child(4) {
+             left: 50vw;
+             top: 80vh;
+             width: 20vw;
+             height: 20vw;
+             opacity: 0.2;
+             animation-delay: 6s;
+         }
+     
+         @keyframes holo-blur-move {
+             0% { transform: scale(1) translateY(0); }
+             100% { transform: scale(1.1) translateY(-30px); }
+         }
+     </style>
+    <!-- Bottom Blur Overlay -->
+    <!-- <div class="bottom-blur-overlay"></div> -->
+<script>
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const footer = document.querySelector('footer');
+        const blurOverlay = document.querySelector('.bottom-blur-overlay');
+        const footerRect = footer.getBoundingClientRect();
+
+        // Hide blur overlay when footer is visible in viewport
+        if (footerRect.top < window.innerHeight && footerRect.bottom > 0) {
+            blurOverlay.classList.remove('active');
+        } else if (scrollTop > docHeight * 0.05) {
+            blurOverlay.classList.add('active');
+        } else {
+            blurOverlay.classList.remove('active');
+        }
+    });
+
+    
+
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const heroImg = document.querySelector('.hero-scroll-img');
+    const heroWrapper = document.querySelector('.hero-reveal-wrapper');
+    
+    if (!heroImg || !heroWrapper) return;
+    
+    function checkImageVisibility() {
+        const rect = heroImg.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Image is visible in viewport (20% top to 80% bottom)
+        const isVisible = rect.top < windowHeight * 0.8 && rect.bottom > windowHeight * 0.2;
+        
+        if (isVisible) {
+            // SHOW image only when scrolled to
+            heroWrapper.classList.add('image-revealed');
+            heroImg.style.opacity = '1';
+        } else {
+            // HIDE image when scrolled away
+            heroWrapper.classList.remove('image-revealed');
+            heroImg.style.opacity = '0';
+        }
+    }
+    
+    // Optimized scroll listener
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(checkImageVisibility);
+            ticking = true;
+            setTimeout(() => { ticking = false; }, 16);
+        }
+    });
+    
+    // Initial state - image hidden
+    heroImg.style.opacity = '0';
+    checkImageVisibility();
+});
+</script>
+
+    <script>
+        // JavaScript to ensure video plays and handle fallback if needed
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroVideo = document.getElementById('hero-video');
+            const videoFallback = document.querySelector('.video-fallback');
+            
+            // Try to play the video (some browsers require this)
+            const playPromise = heroVideo.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Video plays automatically
+                    console.log("Video is playing automatically");
+                }).catch(error => {
+                    // Autoplay was prevented, show fallback
+                    console.log("Video autoplay prevented, showing fallback");
+                    videoFallback.style.display = 'block';
+                    heroVideo.style.display = 'none';
+                });
+            }
+            
+            // Check if video is actually playing (for iOS/Safari)
+            setTimeout(() => {
+                if (heroVideo.paused || heroVideo.readyState < 3) {
+                    console.log("Video may not be playing, showing fallback");
+                    videoFallback.style.display = 'block';
+                    heroVideo.style.display = 'none';
+                }
+            }, 1000);
+            
+            // For mobile devices, ensure video plays inline
+            heroVideo.setAttribute('playsinline', '');
+            heroVideo.setAttribute('webkit-playsinline', '');
+            
+            // Optional: Pause video when page is not visible (to save resources)
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    heroVideo.pause();
+                } else {
+                    heroVideo.play();
+                }
+            });
+        });
+    </script>
+
+    <!--Vendor js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/vendors/counterup.js" type="module"></script>
+    <script src="assets/js/vendors/swiper-bundle.min.js"></script>
+    <script src="assets/js/vendors/fslightbox.js"></script>
+    <script src="assets/js/vendors/jos.min.js"></script>
+    <script src="assets/js/vendors/menu.js"></script>
+
+    <!-- Main js -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

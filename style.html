@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIMass - Smart Automation AI‑Driven BMS</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for the hero section with video background */
+        #section-hero {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            height: 100vh;
+        }
+        
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        #hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3; /* Reduced opacity so text remains readable */
+        }
+        
+        /* Dark overlay for better text readability */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(241, 241, 241, 0.7); /* Light overlay to match your background color */
+            z-index: 0;
+        }
+        
+        /* Hero content styling */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Button styling */
+        .button {
+            display: inline-block;
+            padding: 12px 32px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .button::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            transition: transform 0.3s ease;
+            transform: scaleY(0);
+            transform-origin: bottom;
+        }
+        
+        .button:hover::after {
+            transform: scaleY(1);
+        }
+        
+        /* Fallback for video autoplay issues */
+        .video-fallback {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            z-index: -1;
+        }
+        
+        /* Mobile optimization */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .button {
+                padding: 10px 24px;
+                font-size: 0.9rem;
+            }
+            
+            #hero-video {
+                opacity: 0.2; /* Even lower opacity on mobile for better readability */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--...::: Hero Section Start :::... -->
+    <section id="section-hero">
+        <!-- Video Background -->
+        <div class="hero-video-container">
+            <video id="hero-video" autoplay muted loop playsinline>
+                <!-- AI/Technology related video - using a placeholder with AI/tech theme -->
+                <source src="assets/js/DJI_20251006193658_0562_D.MP4" type="video/mp4">
+                <!-- Fallback image if video doesn't load -->
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="AI Technology Background" style="width: 100%; height: 100%; object-fit: cover;">
+            </video>
+            <div class="video-overlay"></div>
+            <!-- Fallback gradient background if video fails to load -->
+            <div class="video-fallback"></div>
+        </div>
+        
+        <!-- Section Container -->
+        <div class="container global-container">
+            <!-- Hero Content -->
+            <div class="hero-content mb-14 flex flex-column align-items-center text-center lg:mb-20 pt-28 pb-20 lg:pt-32 lg:pb-24 xl:pt-40 xxl:pb-[133px] xxl:pt-[195px]">
+                <h1 class="mb-6 max-w-[510px] lg:max-w-[768px] xl:max-w-[1076px] fw-bold" style="color: #1a1a1a;">
+                    Smart Automation AI‑Driven BMS
+                </h1>
+                <p class="mb-11 max-w-[700px] text-lg fw-semibold sm:text-xl xl:max-w-[980px]" style="color: #1a1a1a;">
+                    Delivering intelligent Building Management Systems (BMS), factory automation, and advanced energy solutions worldwide.
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-4">
+                    <a href="#"
+                        class="button border-2 border-black bg-black text-white after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white">
+                        Get Explore Solutions
+                    </a>
+                    <a href="#"
+                        class="button border-2 border-black bg-transparent text-black after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white" style="color: #1a1a1a;">
+                        Watch Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--...::: Hero Section End :::... -->
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // JavaScript to ensure video plays and handle fallback if needed
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroVideo = document.getElementById('hero-video');
+            const videoFallback = document.querySelector('.video-fallback');
+            
+            // Try to play the video (some browsers require this)
+            const playPromise = heroVideo.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Video plays automatically
+                    console.log("Video is playing automatically");
+                }).catch(error => {
+                    // Autoplay was prevented, show fallback
+                    console.log("Video autoplay prevented, showing fallback");
+                    videoFallback.style.display = 'block';
+                    heroVideo.style.display = 'none';
+                });
+            }
+            
+            // Check if video is actually playing (for iOS/Safari)
+            setTimeout(() => {
+                if (heroVideo.paused || heroVideo.readyState < 3) {
+                    console.log("Video may not be playing, showing fallback");
+                    videoFallback.style.display = 'block';
+                    heroVideo.style.display = 'none';
+                }
+            }, 1000);
+            
+            // For mobile devices, ensure video plays inline
+            heroVideo.setAttribute('playsinline', '');
+            heroVideo.setAttribute('webkit-playsinline', '');
+            
+            // Optional: Pause video when page is not visible (to save resources)
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    heroVideo.pause();
+                } else {
+                    heroVideo.play();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
