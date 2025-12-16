@@ -655,7 +655,7 @@
   .site-header .mobile-menu-trigger span {
     display: block;
     height: 2px;
-    background-color: #13111a;
+    background-color: #FFF;
     width: 24px;
     position: relative;
   }
@@ -665,7 +665,7 @@
   }
 
   .reveal-header .mobile-menu-trigger span {
-    background-color: #13111a !important;
+    background-color: #FFF !important;
   }
 
   .reveal-header .mobile-menu-trigger.is-white span {

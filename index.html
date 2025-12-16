@@ -48,19 +48,19 @@
     ];
 
     const colors = [
-      '#00E5FF', // cyan
-      '#FFD54F', // yellow
-      '#69F0AE', // green
-      '#FF8A80'  // red
+    //   '#00E5FF', // cyan
+    //   '#FFD54F', // yellow
+    "#EC4C22"
+    //   '#69F0AE', // green
+    //   '#FF8A80'  // red
     ];
 
     let index = 0;
-
+     span.textContent = texts[0];
     setInterval(() => {
       index = (index + 1) % texts.length;
-
       span.textContent = texts[index];
-      span.style.color = colors[index];
+      span.style.color =  "#EC4C22" 
     }, 2000); // 👈 every 1 second
 
 
@@ -80,6 +80,7 @@
       const isMobile = window.innerWidth <= 768;
 
     const START_PADDING = isMobile ? 90 : 120;
+    const START_RADIUS = 40;
 
     const END_PADDING = 0;
     const START_WIDTH = 70;
@@ -101,7 +102,11 @@
         START_PADDING - progress * (START_PADDING - END_PADDING);
 
 
+              const radius =
+        START_RADIUS - progress * (START_RADIUS - END_PADDING);
+
       hero.style.padding = `${padding}px`;
+      hero.querySelector('video').style.borderRadius = `${radius}px`;
     });
   });
 </script>
@@ -115,9 +120,10 @@
                 padding: 120px;
             }
         
-            .hero-img-wrapper img {
-                height: 120vh;
+            .hero-img-wrapper video {
+                height: 120vh !important;
                 display: block;
+                border-radius: 40px;
                 /* position: sticky;
                         top: 20px;
                         margin-left: auto; */
@@ -141,7 +147,7 @@
             }
         
             .global-container>* {
-                color: white
+                color: #1E1C1B
                     /* rgb(127, 0, 0); */
             }
         
@@ -156,6 +162,7 @@
                 overflow: hidden;
                 z-index: 1;
                 height: 100vh;
+                background-color: #E9E9E9;
             }
         
             .hero-video-container {
@@ -199,6 +206,8 @@
                 padding: 12px 32px;
                 font-weight: 600;
                 text-decoration: none;
+                border-color: #EC4C22;
+
                 border-radius: 50px;
                 transition: all 0.3s ease;
                 position: relative;
@@ -421,7 +430,7 @@
 
                     <!-- Header User Event -->
                     <div class="flex items-center gap-6">
-                        <a class='button hidden rounded-[50px] border-[#7F8995] bg-transparent text-black after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white lg:inline-block' href='/login' style="color: white !important;">Lets Talk</a>
+                        <a class='button hidden rounded-[50px] border-[#7F8995] bg-transparent text-black after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white lg:inline-block' href='/login' style="color: #1E1C1B !important;">Lets Talk</a>
                         <!-- <a class='button hidden rounded-[50px] border-black bg-black text-white after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white lg:inline-block' href='/signup'>Sign
                             up free</a> -->
                         <!-- Responsive Offcanvas Menu Button -->
@@ -445,9 +454,9 @@
 <section id="section-hero">
     <!-- Video Background -->
     <div class="hero-video-container">
-        <video id="hero-video" autoplay muted loop playsinline>
+        <!-- <video id="hero-video" autoplay muted loop playsinline>
             <source src="assets/img/video.mp4" type="video/mp4">
-        </video>
+        </video> -->
 
 
         <!-- Overlay -->
@@ -470,13 +479,13 @@
             <h1
   id="head-hero"
   class="mb-6 max-w-[510px] lg:max-w-[768px] xl:max-w-[1076px] fw-bold"
-  style="color: white;"
+  style="color: #1E1C1B;"
 >
-  Smart Automation <span id="hero-span">AI-Driven</span> BMS
+  Smart Automation <span id="hero-span"></span> BMS
 </h1>
 
 
-            <p class="mb-11 max-w-[700px] text-lg fw-semibold sm:text-xl xl:max-w-[980px]" style="color: white;">
+            <p class="mb-11 max-w-[700px] text-lg fw-semibold sm:text-xl xl:max-w-[980px]" style="color: #1E1C1B;">
                 Delivering intelligent Building Management Systems (BMS), factory automation, and advanced energy solutions worldwide.
             </p>
 
@@ -488,7 +497,7 @@
 
                 <a href="#"
                     class="button border-2 border-black bg-transparent text-black after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white"
-                    style="color: white !important;">
+                    style="color: #1E1C1B !important;">
                     Watch Demo
                 </a>
             </div>
@@ -507,11 +516,15 @@
 
 <div class="hero-reveal-wrapper">
   <div class="hero-img-wrapper">
-    <img
+
+     <video id="hero-video" autoplay muted loop playsinline>
+            <source src="assets/img/video.mp4" type="video/mp4">
+        </video>
+    <!-- <img
     src="./assets/img/bgImg.jpg"
       alt="hero-dashboard"
       class="hero-scroll-img"
-    />
+    /> -->
   </div>
 </div>
 
