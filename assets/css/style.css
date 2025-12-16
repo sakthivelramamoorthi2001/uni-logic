@@ -2180,6 +2180,7 @@ h5 {
   padding-bottom: 5rem;
 }
 
+
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -2243,6 +2244,11 @@ h5 {
   padding-bottom: 5rem;
 }
 
+.pb-40 {
+  padding-bottom: 17rem;
+}
+
+
 .pb-28 {
   padding-bottom: 7rem;
 }
@@ -2305,6 +2311,10 @@ h5 {
 
 .pt-36 {
   padding-top: 9rem;
+}
+
+.pt-cutom-17 {
+  padding-top: 17rem;
 }
 
 .pt-6 {
